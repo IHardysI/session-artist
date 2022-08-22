@@ -48,24 +48,86 @@ body {
     min-height: 100%;
 }
 
+/* --------------------------- */
+
 .main {
     flex: 1 1 auto;
 }
 
-[class*="__container"] {
-    max-width: 1140px;
-    margin: 0 auto;
+.button {
+    display: inline-block;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 13px 52px;
+    border: 1px solid #007163;
+    border-radius: 5px;
+    color: #007163;
+    white-space: nowrap;
+}
+
+@media (max-width: 991.98px) {
+    .button {
+        padding: 12px 25px;
+    }
 }
 
 
+/* --------------------------- */
+
+[class*="__container"] {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+/* PC */
+@media (max-width: 1170px) {
+    [class*="__container"] {
+        max-width: 970px;
+    }
+}
+/* TABLET */
+@media (max-width: 991.98px) {
+    [class*="__container"] {
+        max-width: 750px;
+    }
+}
+/* PHONE */
+@media (max-width: 767.98px) {
+    [class*="__container"] {
+        max-width: none;
+    }
+}
+
+/* --------------------------- */
+
+
 .header {
-    min-height: 112px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
 }
 
 .header__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 112px;
+}
+@media (max-width: 991.98px) {
+    .header__container {
+        min-height: 80px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .header__container {
+        gap: 10px;
+    }
 }
 
 .header__logo {
@@ -78,9 +140,30 @@ body {
     border: 1px solid #E8E8E8;
     border-radius: 5px;
 }
+@media (max-width: 991.98px) {
+    .header__search {
+        min-width: 290px;
+    }
+}
+@media (max-width: 767.98px) {
+    .header__search {
+        width: auto;
+    }
+    .header__input {
+        left: -100%;
+    }
+}
+
 
 .header__input {
-    padding: 14px 150px 13px 20px;
+    min-width: 310px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+@media (max-width: 991.98px) {
+    .header__input {
+        min-width: 240px;
+    }
 }
 
 .header__submit {
@@ -101,6 +184,12 @@ body {
     gap: 30px;
 }
 
+@media (max-width: 991.98px) {
+    .header__buttons {
+        gap: 10px;
+    }
+}
+
 .header__button {
 
 }
@@ -108,21 +197,6 @@ body {
 .header__login {
 
 }
-
-.button {
-    display: inline-block;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-    padding: 13px 52px;
-    border: 1px solid #007163;
-    border-radius: 5px;
-    color: #007163;
-}
-
-
 
 .button_green {
     background-color: #007163;
